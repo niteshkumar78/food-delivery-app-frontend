@@ -1,0 +1,53 @@
+/* .navMain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftNav {
+}
+
+.rightNav {
+} */
+
+.cartIcon {
+  color: #fff !important;
+
+  height: 52px;
+  margin-right: 20px;
+}
+
+.userProfleNavebarIcon {
+  color: #fff !important;
+  height: 52px;
+}
+.nav {
+  height: 70px;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  margin-left: 15px;
+}
+
+.innerNav {
+  display: flex;
+}
+
+.cartIconContainer {
+  position: relative;
+  color: #fff;
+  margin-right: 30px;
+}
+.cartCount {
+  color: #222;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  right: 0;
+  top: -9;
+}

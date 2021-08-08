@@ -1,0 +1,14 @@
+.mainMenuBody {
+  display: flex;
+}
+
+.mainMenuBody > .leftMain,
+.mainMenuBody > .rightMain {
+  width: 10%;
+  min-height: 100vh;
+}
+
+.mainMenuBody > .middleMain {
+  width: 80%;
+  min-height: 100vh;
+}
