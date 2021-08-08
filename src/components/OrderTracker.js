@@ -23,14 +23,6 @@ function useInput(initialValue) {
 function OrderTracker(props) {
   const allowLocationAcces = useInput(false);
   useEffect(() => {
-    setTimeout(() => {
-      document.getElementById("slide-up").className = "slide-up-start";
-    }, 3000);
-
-    setTimeout(() => {
-      document.getElementById("slide-up").style.display = "none";
-    }, 8000);
-
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
       console.log("hi");
