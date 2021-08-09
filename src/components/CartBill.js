@@ -5,6 +5,8 @@ import cookie from "react-cookies";
 import { useHistory } from "react-router-dom";
 import { orderPlaced } from "../action";
 
+import { baseurl } from "../API/index";
+
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
   return {
@@ -39,7 +41,7 @@ function CartBill(props) {
     // };
     document.body.appendChild(script);
 
-    fetch("http://localhost:8000/cart/payment/", {
+    fetch(`${baseurl}/cart/payment/`, {
       method: "POST",
       headers: {
         authorization: cookie.load("token"),
@@ -68,7 +70,7 @@ function CartBill(props) {
               razorpaySignature: response.razorpay_signature,
             };
             console.log(data);
-            fetch("http://localhost:8000/cart/paymentConfirmation/", {
+            fetch(`${baseurl}/cart/paymentConfirmation/`, {
               method: "POST",
               headers: {
                 authorization: cookie.load("token"),

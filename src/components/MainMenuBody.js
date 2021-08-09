@@ -3,6 +3,7 @@ import cookie from "react-cookies";
 import { RestaurnantsList, MainMenuNavbar } from "./index";
 import "../mainMenu.css";
 import { addUserDetails } from "../action";
+import { baseurl } from "../API/index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -23,7 +24,7 @@ function MainMenuBody(props) {
   console.log("cart no", noOfItemsInCart.value);
 
   useEffect(() => {
-    fetch("http://localhost:8000/profile/", {
+    fetch(`${baseurl}/profile/`, {
       method: "GET",
       headers: {
         authorization: cookie.load("token"),

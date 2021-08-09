@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
 
+import { baseurl } from "../API";
+
 import "../mainMenuNavbar.css";
 
 function useInput(initialValue) {
@@ -23,7 +25,7 @@ function MainMenuNavbar(props) {
     console.log("hello");
     if (props)
       if (userDetails.value.empty === true) {
-        fetch("http://localhost:8000/profile/", {
+        fetch(`${baseurl}/profile/`, {
           method: "GET",
           headers: {
             authorization: cookie.load("token"),

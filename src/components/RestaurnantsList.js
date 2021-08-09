@@ -5,6 +5,8 @@ import "../restaurnantsList.css";
 
 import { addFoodList, add_deleteCartItem, changeCartQty } from "../action";
 
+import { baseurl } from "../API";
+
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
   return {
@@ -22,7 +24,7 @@ function RestaurnantsList(props) {
 
   useEffect(() => {
     if (store.getState().foodList.length === 0) {
-      fetch("http://localhost:8000/dishesList/", {
+      fetch(`${baseurl}/dishesList/`, {
         method: "GET",
         headers: {
           authorization: cookie.load("token"),

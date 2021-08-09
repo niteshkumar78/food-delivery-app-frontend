@@ -6,6 +6,8 @@ import EatHealthyIcon from "../EatHealthyIcon.png";
 
 import { NavbarLoginSignup } from "./index";
 
+import { baseurl } from "../API";
+
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
   return {
@@ -25,7 +27,7 @@ function Signup(props) {
   console.log(email.value, login.value);
   function handleSignup(e) {
     submitLoader.setValue(true);
-    fetch("http://localhost:8000/signup/", {
+    fetch(`${baseurl}/signup/`, {
       method: "POST",
 
       headers: {

@@ -5,6 +5,7 @@ import cookie from "react-cookies";
 import EatHealthyIcon from "../EatHealthyIcon.png";
 
 import { NavbarLoginSignup } from "./index";
+import { baseurl } from "../API/index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -21,7 +22,7 @@ function Login(props) {
   const submitLoader = useInput(false);
   function handleSignup(e) {
     submitLoader.setValue(true);
-    fetch("http://localhost:8000/login/", {
+    fetch(`${baseurl}/login/`, {
       method: "POST",
 
       headers: {
